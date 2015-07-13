@@ -36,7 +36,7 @@ namespace busroutes
 		public ManualResetEvent allDone= new ManualResetEvent(false);
 		const int BUFFER_SIZE = 1024;
 
-		public String execute(String path, String query){
+		public String Execute(String path, String query){
 			try
 			{
 				

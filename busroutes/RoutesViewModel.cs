@@ -80,7 +80,7 @@ namespace busroutes
 			this.isActivityIndicatorRunning = false;
 		}
 
-		async void showNoRoutesFoundAlert ()
+		async void ShowNoRoutesFoundAlert ()
 		{
 			
 			await MainPage.DisplayAlert ("Alert", "No routes Found!", "OK");
@@ -88,20 +88,20 @@ namespace busroutes
 
 		public async void FindRoutesByName ()
 		{
-			startActivityIndicator ();
+			StartActivityIndicator ();
 			Routes =  await new  BusRoutesRestClient().FindRoutesByName (searchBarText);
-			stopActivityIndicator ();
+			StopActivityIndicator ();
 
 			if(Routes.Count == 0){
-				showNoRoutesFoundAlert ();
+				ShowNoRoutesFoundAlert ();
 			}
 		}
 
-		public void startActivityIndicator(){
+		public void StartActivityIndicator(){
 			this.isActivityIndicatorRunning = true;
 		}
 
-		public void stopActivityIndicator(){
+		public void StopActivityIndicator(){
 			this.isActivityIndicatorRunning = false;
 		}
 
