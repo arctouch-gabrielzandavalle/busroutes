@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="busroutes.SearchPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness">
+			<OnPlatform.iOS>
+					0, 20, 0, 0
+			</OnPlatform.iOS>
+		</OnPlatform>
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout>
+			<SearchBar SearchButtonPressed="SearchBarButtonPressed" Text="{Binding searchBarText}">
+			</SearchBar>
+			<ListView x:Name="listView" ItemSelected="onItemSelected" ItemsSource="{Binding Routes}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<StackLayout Padding="5, 5, 0, 5" Orientation="Horizontal" Spacing="15">
+									<StackLayout Padding="5, 0, 0, 0" VerticalOptions="Center">
+										<Label Text="{Binding LongName}" FontAttributes="Bold" FontSize="Medium" />
+									</StackLayout>
+								</StackLayout>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<ActivityIndicator IsRunning="{Binding isActivityIndicatorRunning}" IsVisible="{Binding isActivityIndicatorRunning}"
+            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
