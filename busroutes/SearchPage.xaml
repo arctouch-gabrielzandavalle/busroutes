@@ -9,7 +9,7 @@
 	</ContentPage.Padding>
 	<ContentPage.Content>
 		<StackLayout>
-			<SearchBar SearchButtonPressed="SearchBarButtonPressed" Text="{Binding searchBarText}">
+			<SearchBar SearchCommand="{Binding SearchButtonPressed}" Text="{Binding searchBarText}">
 			</SearchBar>
 			<ListView x:Name="listView" ItemSelected="onItemSelected" ItemsSource="{Binding Routes}">
 				<ListView.ItemTemplate>

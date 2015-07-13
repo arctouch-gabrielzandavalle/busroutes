@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace busroutes
 {
@@ -57,6 +58,20 @@ namespace busroutes
 					this.routes = value;
 					PropertyChanged(this, new PropertyChangedEventArgs("Routes"));
 				}
+			}
+		}
+
+		private Command _searchButtonPressed;
+		public ICommand SearchButtonPressed
+		{
+			get
+			{
+				if (_searchButtonPressed == null)
+				{
+					_searchButtonPressed = new Command(FindRoutesByName);
+				}
+
+				return _searchButtonPressed;
 			}
 		}
 
