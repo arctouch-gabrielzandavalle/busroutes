@@ -19,6 +19,7 @@ namespace busroutes
 	   void SearchBarButtonPressed(Object o, EventArgs e){
 			RoutesViewModel routesViewModel = (RoutesViewModel) BindingContext;
 			routesViewModel.FindRoutesByName ();
+
 		}
 			
 		void onItemSelected(Object o, EventArgs e){

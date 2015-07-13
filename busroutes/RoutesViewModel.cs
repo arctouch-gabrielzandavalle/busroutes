@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace busroutes
 {
@@ -64,11 +65,21 @@ namespace busroutes
 			this.isActivityIndicatorRunning = false;
 		}
 
+		async void showNoRoutesFoundAlert ()
+		{
+			
+			await MainPage.DisplayAlert ("Alert", "No routes Found!", "OK");
+		}
+
 		public async void FindRoutesByName ()
 		{
 			startActivityIndicator ();
 			Routes =  await new  BusRoutesRestClient().FindRoutesByName (searchBarText);
 			stopActivityIndicator ();
+
+			if(Routes.Count == 0){
+				showNoRoutesFoundAlert ();
+			}
 		}
 
 		public void startActivityIndicator(){
@@ -77,6 +88,14 @@ namespace busroutes
 
 		public void stopActivityIndicator(){
 			this.isActivityIndicatorRunning = false;
+		}
+
+		public NavigationPage MainPage
+		{
+			get
+			{
+				return (NavigationPage)((App)App.Current).MainPage;
+			}
 		}
 
 	}
