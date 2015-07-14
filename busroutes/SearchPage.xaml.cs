@@ -17,7 +17,7 @@ namespace busroutes
 				
 		void onItemSelected(Object o, EventArgs e){
 			listView = o as ListView;
-			Route route = (Route) listView.SelectedItem;
+			var route = (Route) listView.SelectedItem;
 			Navigation.PushAsync(new DetailPage(route));
 
 		}

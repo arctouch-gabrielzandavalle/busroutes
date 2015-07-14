@@ -38,10 +38,10 @@ namespace busroutes
 
 			this.Content = root;
 
-			initialize (selectedRoute,listView,indicator);
+			Initialize (selectedRoute,listView,indicator);
 		}
 
-		async void  initialize (Route selectedRoute,ListView listView,ActivityIndicator indicator)
+		async void  Initialize (Route selectedRoute,ListView listView,ActivityIndicator indicator)
 		{
 			ActivateIndicator (indicator);
 			listView.ItemsSource = await FindDeparturesByRouteId (selectedRoute.Id);
@@ -60,10 +60,10 @@ namespace busroutes
 
 				});
 
-			return parseJson (jsonRoutes);
+			return ParseJson (jsonRoutes);
 		}
 
-		List<Departure> parseJson (string jsonRoutes)
+		static List<Departure> ParseJson (string jsonRoutes)
 		{
 			var routeJsonObj = JObject.Parse (jsonRoutes);
 			JArray array = (JArray)routeJsonObj ["rows"];
@@ -78,13 +78,13 @@ namespace busroutes
 			return departures;
 		}
 
-		void ActivateIndicator (ActivityIndicator activityIndicator)
+		static void ActivateIndicator (ActivityIndicator activityIndicator)
 		{
 			activityIndicator.IsRunning = true;
 			activityIndicator.IsVisible = true;
 		}
 
-		void DeactivateIndicator (ActivityIndicator activityIndicator)
+		static void DeactivateIndicator (ActivityIndicator activityIndicator)
 		{
 			activityIndicator.IsRunning = false;
 			activityIndicator.IsVisible = false;

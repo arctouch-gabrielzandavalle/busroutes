@@ -29,7 +29,7 @@ namespace busroutes
 
 			});
 
-			return parseJson (jsonRoutes);
+			return ParseJson (jsonRoutes);
 		}
 
 		//public List<Route> FilterRoutes(String text){
@@ -37,7 +37,7 @@ namespace busroutes
 		//}
 
 
-		ObservableCollection<Route> parseJson (string jsonRoutes)
+		static ObservableCollection<Route> ParseJson (string jsonRoutes)
 		{
 			var routeJsonObj = JObject.Parse (jsonRoutes);
 			JArray array = (JArray)routeJsonObj ["rows"];
