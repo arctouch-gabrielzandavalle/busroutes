@@ -19,6 +19,8 @@ namespace busroutes.iOS
 			Xamarin.Calabash.Start();
 			#endif
 
+			Xamarin.FormsMaps.Init();
+
 			LoadApplication (new App ());
 
 			return base.FinishedLaunching (app, options);
