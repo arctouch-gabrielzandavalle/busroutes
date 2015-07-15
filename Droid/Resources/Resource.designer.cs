@@ -1608,23 +1608,26 @@ namespace busroutes.Droid
 			// aapt resource value: 0x7f0c0039
 			public const int list_item = 2131492921;
 			
+			// aapt resource value: 0x7f0c0053
+			public const int map = 2131492947;
+			
 			// aapt resource value: 0x7f0c0017
 			public const int match_parent = 2131492887;
 			
-			// aapt resource value: 0x7f0c0056
-			public const int media_route_control_frame = 2131492950;
-			
 			// aapt resource value: 0x7f0c0057
-			public const int media_route_disconnect_button = 2131492951;
+			public const int media_route_control_frame = 2131492951;
 			
-			// aapt resource value: 0x7f0c0053
-			public const int media_route_list = 2131492947;
+			// aapt resource value: 0x7f0c0058
+			public const int media_route_disconnect_button = 2131492952;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int media_route_volume_layout = 2131492948;
+			public const int media_route_list = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int media_route_volume_slider = 2131492949;
+			public const int media_route_volume_layout = 2131492949;
+			
+			// aapt resource value: 0x7f0c0056
+			public const int media_route_volume_slider = 2131492950;
 			
 			// aapt resource value: 0x7f0c002a
 			public const int middle = 2131492906;
@@ -1836,16 +1839,19 @@ namespace busroutes.Droid
 			public const int abc_simple_dropdown_hint = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int mr_media_route_chooser_dialog = 2130903063;
+			public const int map_activity = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int mr_media_route_controller_dialog = 2130903064;
+			public const int mr_media_route_chooser_dialog = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int mr_media_route_list_item = 2130903065;
+			public const int mr_media_route_controller_dialog = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int support_simple_spinner_dropdown_item = 2130903066;
+			public const int mr_media_route_list_item = 2130903066;
+			
+			// aapt resource value: 0x7f03001b
+			public const int support_simple_spinner_dropdown_item = 2130903067;
 			
 			static Layout()
 			{

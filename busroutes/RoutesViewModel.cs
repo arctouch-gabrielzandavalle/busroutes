@@ -13,7 +13,7 @@ namespace busroutes
 		#endregion
 
 		private String _searchBarText;
-		public String searchBarText
+		public String SearchBarText
 
 		{
 			get { return _searchBarText; }
@@ -22,13 +22,13 @@ namespace busroutes
 				if (_searchBarText != value)
 				{
 					_searchBarText = value;
-					PropertyChanged(this, new PropertyChangedEventArgs("searchBarText"));
+					PropertyChanged(this, new PropertyChangedEventArgs("SearchBarText"));
 				}
 			}
 		}
 
 		private bool _isActivityIndicatorRunning;
-		public bool isActivityIndicatorRunning
+		public bool IsActivityIndicatorRunning
 					
 		{
 			get { return _isActivityIndicatorRunning; }
@@ -37,7 +37,7 @@ namespace busroutes
 				if (_isActivityIndicatorRunning != value)
 				{
 					_isActivityIndicatorRunning = value;
-					PropertyChanged(this, new PropertyChangedEventArgs("isActivityIndicatorRunning"));
+					PropertyChanged(this, new PropertyChangedEventArgs("IsActivityIndicatorRunning"));
 				}
 			}
 		}
@@ -77,7 +77,7 @@ namespace busroutes
 
 		public RoutesViewModel ()
 		{
-			this.isActivityIndicatorRunning = false;
+			this.IsActivityIndicatorRunning = false;
 		}
 
 		async void ShowNoRoutesFoundAlert ()
@@ -89,7 +89,7 @@ namespace busroutes
 		public async void FindRoutesByName ()
 		{
 			StartActivityIndicator ();
-			Routes =  await new  BusRoutesRestClient().FindRoutesByName (searchBarText);
+			Routes =  await new  BusRoutesRestClient().FindRoutesByName (SearchBarText);
 			StopActivityIndicator ();
 
 			if(Routes.Count == 0){
@@ -98,11 +98,11 @@ namespace busroutes
 		}
 
 		public void StartActivityIndicator(){
-			this.isActivityIndicatorRunning = true;
+			this.IsActivityIndicatorRunning = true;
 		}
 
 		public void StopActivityIndicator(){
-			this.isActivityIndicatorRunning = false;
+			this.IsActivityIndicatorRunning = false;
 		}
 
 		public NavigationPage MainPage

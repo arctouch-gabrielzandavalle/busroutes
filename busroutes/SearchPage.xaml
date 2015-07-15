@@ -9,8 +9,8 @@
 	</ContentPage.Padding>
 	<ContentPage.Content>
 		<StackLayout>
-			<SearchBar SearchCommand="{Binding SearchButtonPressed}" Text="{Binding searchBarText}"></SearchBar>
-			<Button  Text="Search routes on map..." Clicked="SearchRoutesOnMap"></Button>
+			<SearchBar x:Name="searchBar" SearchCommand="{Binding SearchButtonPressed}" Text="{Binding SearchBarText}"></SearchBar>
+			<Button  Text="See streets on map..." Clicked="SearchRoutesOnMap"></Button>
 			<ListView x:Name="listView" ItemSelected="onItemSelected" ItemsSource="{Binding Routes}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -26,7 +26,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<ActivityIndicator IsRunning="{Binding isActivityIndicatorRunning}" IsVisible="{Binding isActivityIndicatorRunning}"
+			<ActivityIndicator IsRunning="{Binding IsActivityIndicatorRunning}" IsVisible="{Binding IsActivityIndicatorRunning}"
             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
