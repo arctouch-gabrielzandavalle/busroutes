@@ -26,6 +26,14 @@ namespace busroutes
 			Navigation.PushAsync(new MapPage(searchBar.Text == null ? "" : searchBar.Text));
 		}
 
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+
+			if (!App.IsLoggedIn) {
+				Navigation.PushModalAsync(new LoginPage());
+			}
+		}
 	}
 }
 

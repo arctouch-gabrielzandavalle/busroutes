@@ -13,6 +13,7 @@ namespace busroutes
 		public MapPage (String query)
 		{
 			initializeMap (query);
+
 		}
 
 		async void initializeMap (string query)
