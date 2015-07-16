@@ -27,7 +27,7 @@
 				</ListView.ItemTemplate>
 			</ListView>
 			<ActivityIndicator IsRunning="{Binding IsActivityIndicatorRunning}" IsVisible="{Binding IsActivityIndicatorRunning}"
-            VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+            VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
