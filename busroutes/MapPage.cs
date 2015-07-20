@@ -29,14 +29,16 @@ namespace busroutes
 				Spacing = 0
 			};
 
-			var Pin = await GetPin (query);
+			if (!"".Equals (query)) {
+				var Pin = await GetPin (query);
 
-			if (Pin == null) {
-				ShowStreetNotFound ();
-			} else {
-				map.Pins.Add (Pin);
-				map.MoveToRegion(new MapSpan (Pin.Position, Pin.Position.Latitude, Pin.Position.Longitude));
+				if (Pin == null) {
+					ShowStreetNotFound ();
+				} else {
+					map.Pins.Add (Pin);
+					map.MoveToRegion(new MapSpan (Pin.Position, Pin.Position.Latitude, Pin.Position.Longitude));
 
+				}
 			}
 
 			stack.Children.Add (map);
