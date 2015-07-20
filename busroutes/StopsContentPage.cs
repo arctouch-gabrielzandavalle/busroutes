@@ -38,7 +38,7 @@ namespace busroutes
 			await Task.Run( () =>
 				{
 					String postParam = "{\"params\": {\"routeId\": \"" + routeId + "\"}}";
-					jsonStops = new WebRequest_BeginGetResponse ().Execute ("/findStopsByRouteId/run",postParam);
+					jsonStops = new BusRoutesWebRequest ().Execute ("/findStopsByRouteId/run",postParam);
 
 				});
 

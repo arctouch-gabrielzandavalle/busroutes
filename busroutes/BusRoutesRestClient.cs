@@ -25,7 +25,7 @@ namespace busroutes
 			await Task.Run( () =>
 				{
 					String postParam = "{\"params\": {\"stopName\": \"%" + routeName + "%\"}}";
-					jsonRoutes = new WebRequest_BeginGetResponse ().Execute ("/findRoutesByStopName/run",postParam);
+					jsonRoutes = new BusRoutesWebRequest ().Execute ("/findRoutesByStopName/run",postParam);
 
 			});
 

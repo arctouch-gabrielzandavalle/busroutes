@@ -28,7 +28,7 @@ namespace busroutes
 			postParam = postparam;
 		}
 	}
-	class  WebRequest_BeginGetResponse
+	class  BusRoutesWebRequest
 	{
 
 		public const String BASE_URL = "https://api.appglu.com/v1/queries";
