@@ -23,7 +23,7 @@ namespace busroutes
 		}
 
 		public void SearchRoutesOnMap(Object o, EventArgs e){
-			Navigation.PushAsync(new MapPage(searchBar.Text == null ? "" : searchBar.Text));
+			Navigation.PushAsync(new MapPage (searchBar.Text ?? ""));
 		}
 
 		protected override void OnAppearing ()

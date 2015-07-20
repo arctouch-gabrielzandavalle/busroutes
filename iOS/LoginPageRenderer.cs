@@ -15,7 +15,7 @@ namespace busroutes.iOS
 			base.ViewDidAppear (animated);
 
 			var auth = new OAuth2Authenticator (
-				clientId: "", // your OAuth2 client id
+				clientId: "476404872533398", // your OAuth2 client id
 				scope: "", // the scopes for the particular API you're accessing, delimited by "+" symbols
 				authorizeUrl: new Uri ("https://m.facebook.com/dialog/oauth/"),
 				redirectUrl: new Uri ("http://www.facebook.com/connect/login_success.html")); // the redirect URL for the service
