@@ -31,7 +31,9 @@ namespace busroutes
 	class  BusRoutesWebRequest
 	{
 
-		public const String BASE_URL = "https://api.appglu.com/v1/queries";
+		const string BASE_URL = "https://api.appglu.com/v1/queries";
+		const string username = "WKD4N7YMA1uiM8V";
+		const string password = "DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68";
 
 		public ManualResetEvent allDone= new ManualResetEvent(false);
 		const int BUFFER_SIZE = 1024;
@@ -44,7 +46,8 @@ namespace busroutes
 
 				request.ContentType = "application/json";
 				request.Method = "POST";
-				request.Credentials = new NetworkCredential("WKD4N7YMA1uiM8V","DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68");
+
+				request.Credentials = new NetworkCredential (username, password);
 				request.Headers["X-AppGlu-Environment"] = "staging";
 
 				RequestState requestState = new RequestState(request, query);
