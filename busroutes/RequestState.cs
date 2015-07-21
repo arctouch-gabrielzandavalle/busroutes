@@ -32,8 +32,8 @@ namespace busroutes
 	{
 
 		const string BASE_URL = "https://api.appglu.com/v1/queries";
-		const string username = "WKD4N7YMA1uiM8V";
-		const string password = "DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68";
+		const string USERNAME = "WKD4N7YMA1uiM8V";
+		const string PASSWORD = "DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68";
 
 		public ManualResetEvent allDone= new ManualResetEvent(false);
 		const int BUFFER_SIZE = 1024;
@@ -43,11 +43,9 @@ namespace busroutes
 			{
 				
 				WebRequest request= WebRequest.Create (BASE_URL + path);
-
 				request.ContentType = "application/json";
 				request.Method = "POST";
-
-				request.Credentials = new NetworkCredential (username, password);
+				request.Credentials = new NetworkCredential (USERNAME, PASSWORD);
 				request.Headers["X-AppGlu-Environment"] = "staging";
 
 				RequestState requestState = new RequestState(request, query);
@@ -139,14 +137,13 @@ namespace busroutes
 				}
 				else
 				{
-					Debug.WriteLine("\nThe HTML page Contents are:  ");
 					if(requestState.requestData.Length>1)
 					{
 						string stringContent = requestState.requestData.ToString();
 						requestState.content = stringContent;
 
 					}
-					Debug.WriteLine("\nPress 'Enter' key to continue........");
+
 					responseStream.Dispose();
 					allDone.Set();
 				}
